@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HiltSetupDemo</string>
+    <string name="simple_button_text">Simple Button</string>
+</resources>
