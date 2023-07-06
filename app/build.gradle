@@ -31,6 +31,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -42,6 +45,19 @@ dependencies {
 
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-compiler:2.44"
+
+    // Lifecycles only
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    // shimmering
+    implementation "com.facebook.shimmer:shimmer:0.5.0"
+    implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.2"
+    implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.2"
+    implementation "com.hannesdorfmann:adapterdelegates4-pagination:4.3.2"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
