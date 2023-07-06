@@ -1,4 +1,4 @@
-package com.example.hiltsetupdemo
+package com.example.hiltsetupdemo.annotations
 
 import java.lang.annotation.Documented
 import java.lang.annotation.Retention

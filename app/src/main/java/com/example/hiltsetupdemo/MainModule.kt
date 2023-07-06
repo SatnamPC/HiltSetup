@@ -1,5 +1,6 @@
 package com.example.hiltsetupdemo
 
+import com.example.hiltsetupdemo.annotations.DataAnnotation
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
