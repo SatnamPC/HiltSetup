@@ -12,6 +12,8 @@ import com.example.hiltsetupdemo.adapterdelegates.model.RowUiItem
 import com.example.hiltsetupdemo.annotations.DataAnnotation
 import com.example.hiltsetupdemo.databinding.ActivityMainBinding
 import com.example.hiltsetupdemo.helpers.ListUpdateHelper
+import com.example.hiltsetupdemo.reload.ReloadHelper
+import com.example.hiltsetupdemo.reload.ReloadScreenComponent
 import com.example.hiltsetupdemo.utilities.viewBinding
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,6 +29,9 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var listUpdateHelper: ListUpdateHelper
+
+    @Inject
+    lateinit var reloadHelper: ReloadHelper
 
     @Inject
     @DataAnnotation
@@ -59,6 +64,13 @@ class MainActivity : AppCompatActivity() {
             adapter = adapter
         )
 
+    }
 
+    override fun onResume() {
+        super.onResume()
+        if (reloadHelper.shouldReload(ReloadScreenComponent.ONE)){
+            // Do the need full
+            reloadHelper.consumeReloadComponent(ReloadScreenComponent.ONE)
+        }
     }
 }
